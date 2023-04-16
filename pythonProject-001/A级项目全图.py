@@ -1,10 +1,12 @@
 import time
-from selenium.webdriver.common.by import By
+
 from selenium import webdriver
-from selenium.webdriver.edge.service import Service
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.edge.service import Service
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
+
 # import unittest
 driver = webdriver.Edge(service=Service(executable_path="C:\\py\\msedgedriver.exe"))  # 找到msedgedriver
 wait = WebDriverWait(driver, 20)
@@ -156,9 +158,9 @@ driver.refresh()
 time.sleep(6)
 driver.switch_to.window(windows[-1])
 Memo_Edit_Button = wait.until(
-        ec.presence_of_element_located((By.XPATH, "//html/body/div[1]/div/section/section/main/div/div/div/div/div"
-                                                  "/div[3]/div[3]/div[1]/div[2]/div/div[3]/div/div/div["
-                                                  "2]/div/div/div/div[1]/button")))
+    ec.presence_of_element_located((By.XPATH, "//html/body/div[1]/div/section/section/main/div/div/div/div/div"
+                                              "/div[3]/div[3]/div[1]/div[2]/div/div[3]/div/div/div["
+                                              "2]/div/div/div/div[1]/button")))
 Memo_Edit_Button.click()
 time.sleep(5)  # 点击编辑按钮
 Product_Core_Business = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div"
@@ -298,7 +300,7 @@ driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/di
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[4]/div[3]/div/div[11]/div[3]/div/div[1]/div["
                               "1]/div[3]/div/div/div[2]/div/div/div[2]/div/div/div/div/textarea") \
     .send_keys("未知的下游一号的承担职责")
-time.sleep(2)   # 在价值链条中输入上游下游
+time.sleep(2)  # 在价值链条中输入上游下游
 Income_Mode = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
                                             "2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[3]/div[4]/div[3]/div/div["
                                             "12]/div[3]/div/div[2]/div/div[2]/div[1]/div/div/div/div[2]/div[1]")
@@ -398,7 +400,7 @@ driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/di
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[4]/div[3]/div/div[13]/div[3]/div/div[1]/div["
                               "1]/div[2]/div/div/div[2]/div/div/div[7]/div/div/div/div/textarea") \
     .send_keys("对标未知的创始人信息")
-time.sleep(2)   # 输入竞品与对标
+time.sleep(2)  # 输入竞品与对标
 "---------------------------------------------------------------------------------------------------------------------"
 # 运营情况
 Company_Start_Time = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div"
@@ -412,22 +414,22 @@ Company_Start_Time01 = driver.find_element(By.XPATH, "/html/body/div[6]/div/div/
                                                      "2]/table/tbody/tr[3]/td[3]")
 time.sleep(1)
 Company_Start_Time01.click()
-time.sleep(2)   # 在公司启动时间中选中2022的当前月份
+time.sleep(2)  # 在公司启动时间中选中2022的当前月份
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[3]/div[3]/div/div[2]/div["
                               "1]/div/div[2]/div[2]/div/div[1]/div/div/div/div/div[2]/input") \
-    .send_keys("66666")    # 在4年营收情况中的收入输入今年字段
+    .send_keys("66666")  # 在4年营收情况中的收入输入今年字段
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[3]/div[3]/div/div[2]/div["
                               "1]/div/div[2]/div[2]/div/div[2]/div/div/div/div/div[2]/input") \
-    .send_keys("66667")    # 在4年营收情况中的收入输入明年字段
+    .send_keys("66667")  # 在4年营收情况中的收入输入明年字段
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[3]/div[3]/div/div[2]/div["
                               "1]/div/div[2]/div[2]/div/div[3]/div/div/div/div/div[2]/input") \
-    .send_keys("66668")    # 在4年营收情况中的收入输入后年字段
-time.sleep(1)    # 在4年营收情况中输入收入一栏
+    .send_keys("66668")  # 在4年营收情况中的收入输入后年字段
+time.sleep(1)  # 在4年营收情况中输入收入一栏
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[3]/div[3]/div/div[2]/div["
                               "1]/div/div[3]/div[2]/div/div[1]/div/div/div/div/div[2]/input") \
@@ -442,26 +444,26 @@ driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/di
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[3]/div[3]/div/div[2]/div["
                               "1]/div/div[3]/div[2]/div/div[3]/div/div/div/div/div[2]/input") \
     .send_keys("6665")
-time.sleep(2)    # 在4年营收情况中输入净利润一栏
+time.sleep(2)  # 在4年营收情况中输入净利润一栏
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[4]/div[3]/div/div[1]/div["
                               "1]/div/div[2]/div/div[1]/div/div/div[1]/div/div/div/div/textarea") \
-    .send_keys("线上-广告投入")    # 在获客方式的方式中输入
+    .send_keys("线上-广告投入")  # 在获客方式的方式中输入
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[4]/div[3]/div/div[1]/div["
                               "1]/div/div[2]/div/div[1]/div/div/div[2]/div/div/div/div/textarea") \
-    .send_keys("未知的渠道")   # 在获客方式的渠道中输入
+    .send_keys("未知的渠道")  # 在获客方式的渠道中输入
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[4]/div[3]/div/div[1]/div["
                               "1]/div/div[2]/div/div[1]/div/div/div[3]/div/div/div/div/textarea") \
-    .send_keys("未知量化详情")   # 在获客方式的量化详情中输入
-time.sleep(1)   # 输入获客方式
+    .send_keys("未知量化详情")  # 在获客方式的量化详情中输入
+time.sleep(1)  # 输入获客方式
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[6]/div[3]/div/div["
                               "1]/div/div/div/div[2]/div/div[1]/div[2]/input") \
-    .send_keys("66")    # 输入员工总数
+    .send_keys("66")  # 输入员工总数
 time.sleep(3)
 Department = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
                                            "2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div["
@@ -477,12 +479,12 @@ Department01 = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/sect
 time.sleep(1)
 Department01.send_keys("产品")
 Department01.send_keys(Keys.ENTER)
-time.sleep(2)    # 选择部门为产品
+time.sleep(2)  # 选择部门为产品
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[6]/div[3]/div/div[2]/div["
                               "1]/div[1]/div[2]/div/div[1]/div/div/div[2]/div/div/div/div/div[2]/input") \
     .send_keys("66")
-time.sleep(1)   # 在年月的员工
+time.sleep(1)  # 在年月的员工
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[6]/div[3]/div/div[2]/div["
                               "1]/div[1]/div[2]/div/div[1]/div/div/div[3]/div/div/div/div/div[2]/input") \
@@ -516,12 +518,12 @@ time.sleep(2)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[7]/div[3]/div/div[3]/div["
                               "2]/div[1]/div/div/div[1]/div/div[2]/div/div/input") \
-    .send_keys("当前最大单一支出类型的未知的支出类型")   # 输入当前最大单一支出类型的支出类型
+    .send_keys("当前最大单一支出类型的未知的支出类型")  # 输入当前最大单一支出类型的支出类型
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[5]/div[3]/div/div[7]/div[3]/div/div[3]/div["
                               "2]/div[1]/div/div/div[2]/div/div[2]/div/div/div[2]/input") \
-    .send_keys("765")   # 输入当前最大单一支出类型的支出金额
+    .send_keys("765")  # 输入当前最大单一支出类型的支出金额
 time.sleep(2)
 Company_Development = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div"
                                                     "/div[2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[3]/div["
@@ -529,13 +531,13 @@ Company_Development = driver.find_element(By.XPATH, "/html/body/div[1]/div/secti
 time.sleep(1)
 Company_Development.click()
 time.sleep(1)
-Company_Development.send_keys("未知的公司发展历程及八卦")   # 输入公司发展历程及八卦
+Company_Development.send_keys("未知的公司发展历程及八卦")  # 输入公司发展历程及八卦
 time.sleep(2)
 # 股东/董事
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div[2]/div["
                               "2]/div/div[1]/div/div/div[1]/div/div/div[1]/div/div/div/div/input") \
-    .send_keys("未知的股东名称")   # 输入股东名称
+    .send_keys("未知的股东名称")  # 输入股东名称
 time.sleep(1)
 Shareholder = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
                                             "2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div["
@@ -544,22 +546,22 @@ Shareholder = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/secti
 time.sleep(1)
 Shareholder.click()
 time.sleep(1)
-Shareholder.send_keys(Keys.ENTER)   # 输入股东身份为创始人
+Shareholder.send_keys(Keys.ENTER)  # 输入股东身份为创始人
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div[2]/div["
-                              "2]/div/div[1]/div/div/div[1]/div/div/div[3]/div/div[1]/div/div/div[2]/input")\
-    .send_keys("100")   # 输入持股为100，
+                              "2]/div/div[1]/div/div/div[1]/div/div/div[3]/div/div[1]/div/div/div[2]/input") \
+    .send_keys("100")  # 输入持股为100，
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div[2]/div["
                               "2]/div/div[1]/div/div/div[1]/div/div/div[4]/div/div/div/div/div[2]/input") \
-    .send_keys("88888")   # 输入融资金额
+    .send_keys("88888")  # 输入融资金额
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div["
                               "4]/div/div/div[1]/div/div/div[1]/div/div/div[1]/div/div/div/div/input") \
-    .send_keys("未知的ESOP")   # 输入ESOP
+    .send_keys("未知的ESOP")  # 输入ESOP
 time.sleep(1)
 Shareholder01 = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
                                               "2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div["
@@ -578,7 +580,7 @@ time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div["
                               "4]/div/div/div[1]/div/div/div[1]/div/div/div[4]/div/div/div/div/div[2]/input") \
-    .send_keys("88889")   # 输入融资金额
+    .send_keys("88889")  # 输入融资金额
 time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div[3]/div["
@@ -588,7 +590,7 @@ time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div[1]/div[3]/div["
                               "1]/div/div/div[1]/div/div/div[3]/div/div/div/div/div[2]/input") \
-    .send_keys("88898")   # 输入融资金额
+    .send_keys("88898")  # 输入融资金额
 time.sleep(1)
 Previous_Round = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
                                                "2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div["
@@ -597,7 +599,7 @@ Previous_Round = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/se
 time.sleep(1)
 Previous_Round.click()
 time.sleep(1)
-Previous_Round.send_keys(Keys.ENTER)   # 选择上一轮为尚不融资
+Previous_Round.send_keys(Keys.ENTER)  # 选择上一轮为尚不融资
 time.sleep(2)
 Share = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div["
                                       "3]/div[""1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[2]/div["
@@ -607,7 +609,7 @@ time.sleep(1)
 driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div[2]/div[3]/div["
                               "1]/div[2]/div/div[3]/div/div/div[3]/div[6]/div[3]/div/div[3]/div[2]/div["
                               "1]/div/div/div[1]/div/div/div/div/div[2]/input") \
-    .send_keys("666888")    # 输入累计融资
+    .send_keys("666888")  # 输入累计融资
 time.sleep(2)
 # 融资情况
 Previous_Round = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
@@ -801,7 +803,7 @@ Points4 = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/m
                                         "2]/div/div/div[2]/div/div[2]/div/div/div[4]/div[2]/div/div/div[2]/div[1]")
 driver.execute_script("arguments[0].click();", Points4)
 time.sleep(1)
-Points4.send_keys("未知人的风险")     # 输入主导人的天善观点
+Points4.send_keys("未知人的风险")  # 输入主导人的天善观点
 time.sleep(3)
 Memo_Save_Button = driver.find_element(By.XPATH, "/html/body/div[1]/div/section/section/main/div/div/div/div/div/div["
                                                  "2]/div[3]/div[1]/div[2]/div/div[3]/div/div/div[2]/div/div/div/div["
@@ -814,10 +816,6 @@ Success = driver.find_element(By.XPATH, "/html/body/div[26]/div/div[2]/div/div[2
 print("保存成功提示：{}".format(Success.text))
 time.sleep(1)
 Memo_Save_Success_Button.click()
-
-
-
-
 
 """
 class TestWow(unittest.TestCase):
